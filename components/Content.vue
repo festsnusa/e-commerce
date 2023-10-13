@@ -125,22 +125,13 @@ onBeforeUnmount(() => {
 
   &__cart {
     flex: 60%;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    background-color: hsl(26, 100%, 55%);
-    color: #fff;
     box-shadow: 3px 13px 11px -5px rgba(34, 60, 80, 0.2);
-    border: none;
-    border-radius: 10px;
     padding: 1rem;
-
-    &:hover {
-      transform: scale(1.05);
-      transition: all 0.2s ease-in-out;
-    }
+    color: #fff;
   }
 
   @media (max-width: 1000px) {

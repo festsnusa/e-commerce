@@ -9,13 +9,7 @@
 </template>
 
 <script setup lang="ts">
-const arrItems = [
-  { "title": "collections", "link": "collections" },
-  { "title": "men", "link": "men" },
-  { "title": "women", "link": "women" },
-  { "title": "about", "link": "about" },
-  { "title": "contact", "link": "contact" },
-]
+const { arrItems } = useNavigation()
 </script>
 
 <style scoped lang="scss">

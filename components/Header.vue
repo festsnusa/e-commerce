@@ -2,13 +2,12 @@
   <header class="header">
     <div class="header__content">
       <div class="header__left">
-        <img v-show="isMobile" class="header__burger" src="@/assets/images/icon-menu.svg" alt="menu"
-          @click="isMenuVisible = !isMenuVisible">
+        <img v-show="isMobile" class="header__burger" src="@/assets/images/icon-menu.svg" alt="menu" @click="toggleMenu">
         <img class="header__logo" src="@/assets/images/logo.svg" alt="logo">
         <Navigation v-if="!isMobile" />
       </div>
       <div class="header__right">
-        <div class="header__cart">
+        <div class="header__cart" @click="toggleCart">
           <img src="@/assets/images/icon-cart.svg" alt="cart">
           <span :key="currentAmount">{{ currentAmount }}</span>
         </div>
@@ -16,12 +15,14 @@
       </div>
     </div>
     <hr v-show="!isMobile" />
+    <Cart v-show="isCartVisible" />
   </header>
 </template>
 
 <script setup lang="ts">
 const { isMobile, handleScreenResize } = useResolution()
-const { currentAmount } = useCart()
+const { currentAmount, isCartVisible, toggleCart } = useCart()
+const { toggleMenu } = useMenu()
 
 const isMenuVisible = ref<boolean>(false)
 
@@ -43,6 +44,7 @@ hr {
 
 .header {
   padding: 0 8rem;
+  position: relative;
 
   &__burger {
     cursor: pointer;
@@ -70,6 +72,7 @@ hr {
   &__cart {
 
     position: relative;
+    cursor: pointer;
 
     span {
       position: absolute;
