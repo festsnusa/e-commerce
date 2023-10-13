@@ -18,6 +18,9 @@
 .price {
 
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 
   &__top {
     display: flex;
@@ -40,6 +43,12 @@
   &__old {
     text-decoration: line-through;
     color: hsl(220, 14%, 75%);
+  }
+
+  @media (max-width: 1000px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 </style>
