@@ -16,6 +16,7 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@vueuse/core": "^10.5.0",
     "ant-design-vue": "^4.0.3",
     "sass": "^1.69.3",
     "swiper": "^10.3.1"
